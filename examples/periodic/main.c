@@ -39,13 +39,13 @@ extern u2_t readsensor(void);
 //////////////////////////////////////////////////
 
 // application router ID (LSBF)
-static const u1_t APPEUI[8]  = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+static const u1_t APPEUI[8]  = { 0x43, 0x4B, 0x00, 0xF0, 0x7E, 0xD5, 0xB3, 0x70 };
 
 // unique device ID (LSBF)
-static const u1_t DEVEUI[8]  = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+static const u1_t DEVEUI[8]  = { 0xB0, 0xD8, 0xAA, 0xF4, 0x22, 0xEA, 0x88, 0x00 };
 
 // device-specific AES key (derived from device EUI)
-static const u1_t DEVKEY[16] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+static const u1_t DEVKEY[16] = { 0xF1, 0x61, 0x1B, 0x84, 0x5D, 0x58, 0x04, 0x32, 0x80, 0x15, 0x6B, 0x25, 0x58, 0x94, 0xFE, 0x21 };
 
 //////////////////////////////////////////////////
 // APPLICATION CALLBACKS
@@ -77,6 +77,8 @@ static void initfunc (osjob_t* j) {
     initsensor();
     // reset MAC state
     LMIC_reset();
+
+    LMIC_selectSubBand(1);
     // start joining
     LMIC_startJoining();
     // init done - onEvent() callback will be invoked...
@@ -116,7 +118,7 @@ static void reportfunc (osjob_t* j) {
     LMIC.frame[1] = val;
     LMIC_setTxData2(1, LMIC.frame, 2, 0); // (port 1, 2 bytes, unconfirmed)
     // reschedule job in 60 seconds
-    os_setTimedCallback(j, os_getTime()+sec2osticks(60), reportfunc);
+    os_setTimedCallback(j, os_getTime()+sec2osticks(5), reportfunc);
 }
 
 
