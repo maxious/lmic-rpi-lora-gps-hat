@@ -1,3 +1,56 @@
+# Australian Frequency Support
+
+## CFG_au915
+
+There is an additional preprocessor definition named "CFG_au915". Adding -DCFG_au915 along with the -DCFG_us915 on the LMICCFG line will enable Australian frequency selection along with 915 support.
+
+```
+LMICCFG += -DCFG_DEBUG -DCFG_us915 -DCFG_au915 -DCFG_sx1276_radio -DDEBUG_LMIC -DDEBUG_HAL
+```
+
+
+1. [Support for Australia 915-928 ](https://github.com/TheThingsNetwork/ttn/issues/120)
+2. [The Things Network LoraWan Internation Frequencies](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans)
+
+The **lorabase.h** 915 Frequency enum modified for Australian LoraWan Frequencies
+
+````c
+#if defined(CFG_au915)  // ==========================================
+
+// Default frequency plan for AU 915MHz
+enum { US915_125kHz_UPFBASE = 915200000,
+       US915_125kHz_UPFSTEP =    200000,
+       US915_500kHz_UPFBASE = 915900000,
+       US915_500kHz_UPFSTEP =   1600000,
+       US915_500kHz_DNFBASE = 923300000,
+       US915_500kHz_DNFSTEP =    600000
+};
+
+enum { US915_FREQ_MIN = 915000000,
+       US915_FREQ_MAX = 928000000 };
+
+#elif defined(CFG_us915)
+
+// Default frequency plan for US 915MHz
+enum { US915_125kHz_UPFBASE = 902300000,
+       US915_125kHz_UPFSTEP =    200000,
+       US915_500kHz_UPFBASE = 903000000,
+       US915_500kHz_UPFSTEP =   1600000,
+       US915_500kHz_DNFBASE = 923300000,
+       US915_500kHz_DNFSTEP =    600000
+};
+
+enum { US915_FREQ_MIN = 902000000,
+       US915_FREQ_MAX = 928000000 };
+
+#endif
+````
+
+
+
+
+
+
 # lmic-rpi-lora-gps-hat
 
 Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
