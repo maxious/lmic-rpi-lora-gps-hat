@@ -1,3 +1,23 @@
+# lmic-rpi-lora-gps-hat
+
+Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
+targeted to RPi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/index.php?title=Lora/GPS_HAT) hw version 1.4.
+
+This code forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
+
+
+Code should support the standalone SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules)
+
+See hal.c for default wiring.
+
+```c
+// Note: WiringPi Pin Numbering Schema
+const int WIRING_PI_PIN_NSS = 6;
+const int WIRING_PI_PIN_RST = 0;
+const int WIRING_PI_PIN_DIO[3] = { 7, 4, 5 };
+```
+
+
 # Australian Frequency Support
 
 ## CFG_au915
@@ -46,18 +66,6 @@ enum { US915_FREQ_MIN = 902000000,
 #endif
 ````
 
-
-
-
-
-
-# lmic-rpi-lora-gps-hat
-
-Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
-targeted to RPi and Dragino LoRA/GPS HAT.
-
-The goal was to keep the LMIC 1.6 sourcecode untouched, and just provide a
-Hardware Abstraction Layer (HAL) for Raspberry Pi and Dragino LoRa/GPS HAT.
 
 ## Installation
 
