@@ -1,7 +1,7 @@
 # lmic-rpi-lora-gps-hat
 
 Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
-targeted to RPi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/index.php?title=Lora/GPS_HAT) hw version 1.4.
+targeted to RPi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/index.php?title=Lora/GPS_HAT) hardware version 1.4.
 
 This code forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
 
@@ -22,7 +22,7 @@ const int WIRING_PI_PIN_DIO[3] = { 7, 4, 5 };
 
 ## CFG_au915
 
-There is an additional preprocessor definition named "CFG_au915". Adding -DCFG_au915 along with the -DCFG_us915 on the LMICCFG line will enable Australian frequency selection along with 915 support.
+There is an additional preprocessor definition named "CFG_au915". Adding -DCFG_au915 along with the -DCFG_us915 on the LMICCFG line in the examples/projects.gmk file will enable Australian frequency selection along with 915 support.
 
 ```
 LMICCFG += -DCFG_DEBUG -DCFG_us915 -DCFG_au915 -DCFG_sx1276_radio -DDEBUG_LMIC -DDEBUG_HAL
