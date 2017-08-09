@@ -3,29 +3,7 @@
 Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
 targeted to Raspberry Pi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/index.php?title=Lora/GPS_HAT) hardware version 1.4.
 
-This code forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
-
-## Standalone RFM95W Lora Transceiver
-
-The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. 
-
-SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
-
-![Raspberry Pi Zero with RFM95 module]()
-
-
-
-See the [Dragino HAT Schematic](https://github.com/dragino/Lora/blob/master/Lora_GPS%20HAT/v1.4/Lora%20GPS%20%20HAT%20for%20RPi%20v1.4.pdf) for more information.
-
-See hal.c for default wiring.
-
-```c
-// Note: WiringPi Pin Numbering Schema
-const int WIRING_PI_PIN_NSS = 6;
-const int WIRING_PI_PIN_RST = 0;
-const int WIRING_PI_PIN_DIO[3] = { 7, 4, 5 };
-```
-
+This code was forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
 
 # Australian Frequency Support
 
@@ -41,7 +19,7 @@ LMICCFG += -DCFG_DEBUG -DCFG_us915 -DCFG_au915 -DCFG_sx1276_radio -DDEBUG_LMIC -
 1. [Support for Australia 915-928 ](https://github.com/TheThingsNetwork/ttn/issues/120)
 2. [The Things Network LoraWan Internation Frequencies](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans)
 
-The **lorabase.h** 915 Frequency enum modified for Australian LoraWan Frequencies
+The **lorabase.h** 915 Frequency enum was modified to add support for Australian LoraWan Frequencies.
 
 ````c
 #if defined(CFG_au915)  // ==========================================
@@ -74,6 +52,54 @@ enum { US915_FREQ_MIN = 902000000,
 
 #endif
 ````
+
+
+## Standalone RFM95W Lora Transceiver
+
+The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. 
+
+SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
+
+![Raspberry Pi Zero with RFM95 module](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/20170809_092731.jpg)
+
+I wired up a standalone HopeFRM RFM95 using an [Adafruit Perma Proto Bonnet Mini Kit](https://www.adafruit.com/product/3203). I used different pinouts from the Dragino HAT to suit the  physical layout of Proto Bonnet. You'll need to modify the default WiringPi and BCM pin definition in the **hal.c** file you'll find in the **lora_gps_hat** directory.
+
+The [Dragino HAT Schematic](https://github.com/dragino/Lora/blob/master/Lora_GPS%20HAT/v1.4/Lora%20GPS%20%20HAT%20for%20RPi%20v1.4.pdf) is a useful reference.
+
+|function|Wiring Pi | BCM|
+|-----|-----|----|
+|NSS|22|6|
+|RESET|21|5|
+|DIO0|24|19|
+|DIO1|28|20|
+|DIO2|29|21|
+|MOSI||10|
+|MISO||9|
+|SCLK||11|
+
+
+
+
+
+```c
+// Note: WiringPi Pin Numbering Schema
+const int WIRING_PI_PIN_NSS = 22;
+const int WIRING_PI_PIN_RST = 21;
+const int WIRING_PI_PIN_DIO[3] = { 24, 28, 29 };
+
+// Note: BCM Pin Numbering Schema
+const int BCM_PIN_DIO[3] = { 19, 20, 21 };
+```
+
+
+
+
+
+
+
+
+
+
 
 
 ## Installation
