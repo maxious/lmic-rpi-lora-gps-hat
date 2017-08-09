@@ -3,6 +3,8 @@
 Hardware Abstraction Layer (HAL) for IBM's LMIC 1.6 communication stack 
 targeted to Raspberry Pi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/index.php?title=Lora/GPS_HAT) hardware version 1.4.
 
+![Dragino LoRA/GPS HAT](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Lora_GPS_Hat_30_1024x1024.png)
+
 This code was forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
 
 # Australian Frequency Support
