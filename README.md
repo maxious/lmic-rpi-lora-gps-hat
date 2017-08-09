@@ -9,7 +9,7 @@ This code was forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wkle
 
 ## CFG_au915
 
-There is an additional preprocessor definition named "CFG_au915". Adding -DCFG_au915 along with the -DCFG_us915 on the LMICCFG line in the examples/projects.gmk file will enable Australian frequency selection along with 915 support.
+There is now an additional preprocessor definition named "CFG_au915". Adding -DCFG_au915 along with the -DCFG_us915 on the LMICCFG line in the examples/projects.gmk file will enable Australian frequency selection along with 915 support.
 
 ```
 LMICCFG += -DCFG_DEBUG -DCFG_us915 -DCFG_au915 -DCFG_sx1276_radio -DDEBUG_LMIC -DDEBUG_HAL
@@ -19,7 +19,9 @@ LMICCFG += -DCFG_DEBUG -DCFG_us915 -DCFG_au915 -DCFG_sx1276_radio -DDEBUG_LMIC -
 1. [Support for Australia 915-928 ](https://github.com/TheThingsNetwork/ttn/issues/120)
 2. [The Things Network LoraWan Internation Frequencies](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans)
 
-The **lorabase.h** 915 Frequency enum was modified to add support for Australian LoraWan Frequencies.
+
+The **lorabase.h** 915 Frequency code was modified to add support for Australian LoraWan Frequencies.
+
 
 ````c
 #if defined(CFG_au915)  // ==========================================
@@ -56,7 +58,7 @@ enum { US915_FREQ_MIN = 902000000,
 
 ## Standalone RFM95W Lora Transceiver
 
-The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. 
+The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. You can pick up a RFM95W from [Alixpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20170808191918&SearchText=rfm95w) for US$5, they are cheap but fiddly to solder as pins do not match standard breadboard spacings. Note, the W at the end of RFM95W donates Worldwide and is the module version that should be used outside of China.
 
 SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
 
