@@ -5,10 +5,17 @@ targeted to Raspberry Pi and [Dragino LoRA/GPS HAT](http://wiki.dragino.com/inde
 
 This code forked from [wklenk/lmic-rpi-lora-gps-hat](https://github.com/wklenk/lmic-rpi-lora-gps-hat) and 915 subbase selection functionality added to allow for subbase 2 selection for Australia.
 
+## Standalone RFM95W Lora Transceiver
+
+The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. 
+
+SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
+
+![Raspberry Pi Zero with RFM95 module]()
 
 
 
-Code should support the standalone SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules). See the [Dragino HAT Schematic](https://github.com/dragino/Lora/blob/master/Lora_GPS%20HAT/v1.4/Lora%20GPS%20%20HAT%20for%20RPi%20v1.4.pdf) for more information.
+See the [Dragino HAT Schematic](https://github.com/dragino/Lora/blob/master/Lora_GPS%20HAT/v1.4/Lora%20GPS%20%20HAT%20for%20RPi%20v1.4.pdf) for more information.
 
 See hal.c for default wiring.
 
