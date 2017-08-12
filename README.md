@@ -129,7 +129,7 @@ Strip a mm or two off the end of the wire, tin and solder into the ANT pad.
 
 See [The Things Network Azure IoT Hub Gateway ](https://github.com/gloveboxes/The-Things-Network-Azure-IoT-Hub-Gateway) project.
 
-![Azure IoT Hub Integration](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Azure IoT Hub Integration.jpg)
+![Azure IoT Hub Integration](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Azure%20IoT%20Hub%20Integration.jpg)
 
 
 ## Installation
