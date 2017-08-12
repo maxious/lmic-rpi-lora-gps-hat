@@ -64,6 +64,8 @@ The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry
 
 SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
 
+See bme280_periodic sample in the examples director. This sample sensors the environment with a [Bosch BME280](https://github.com/BoschSensortec/BME280_driver) (Temperature, Pressure and Humidity) Sensor.
+
 ![Raspberry Pi Zero with RFM95 module](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/pizero-loRaWAN-bme280.jpg)
 
 I wired up a standalone HopeFRM RFM95 using an [Adafruit Perma Proto Bonnet Mini Kit](https://www.adafruit.com/product/3203). I used different pinouts from the Dragino HAT to suit the  physical layout of Proto Bonnet. You'll need to modify the default WiringPi and BCM pin definition in the **hal.c** file you'll find in the **lora_gps_hat** directory.
@@ -97,7 +99,7 @@ const int BCM_PIN_DIO[3] = { 19, 20, 21 };
 
 
 
-# Capacitors
+## Capacitors
 
 - 1 x 4.7uF ([Tantalum Capacitor](https://www.jaycar.com.au/4-7uf-16vdc-tantalum-capacitor/p/RZ6636))
 - 1 x 100nF ([Ceramic Capacitor](https://www.jaycar.com.au/100nf-50vdc-ceramic-capacitors-pack-of-2/p/RC5360))
@@ -105,6 +107,23 @@ const int BCM_PIN_DIO[3] = { 19, 20, 21 };
 Wired as per this schematic.
 
 ![](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Capacitors.png)
+
+
+## Wire Antenna
+
+Information from [Adafruit Aerial Assembly](https://learn.adafruit.com/radio-featherwing/assembly)
+
+A wire antenna, aka "quarter wave whip antenna" is low cost and works very well! You just have to cut the wire down to the right length.
+
+ 
+Cut a stranded or solid core wire the the proper length for the module/frequency
+
+- 433 MHz - 6.5 inches, or 16.5 cm
+- 868 MHz - 3.25 inches or 8.2 cm
+- 915 MHz - 3 inches or 7.8 cm
+
+
+Strip a mm or two off the end of the wire, tin and solder into the ANT pad.
 
 
 
