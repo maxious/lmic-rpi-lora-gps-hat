@@ -120,7 +120,7 @@ Cut a stranded or solid core wire the the proper length for the module/frequency
 
 - 433 MHz - 6.5 inches, or 16.5 cm
 - 868 MHz - 3.25 inches or 8.2 cm
-- 915 MHz - 3 inches or 7.8 cm
+- **915 MHz - 3 inches or 7.8 cm**
 
 
 Strip a mm or two off the end of the wire, tin and solder into the ANT pad.
