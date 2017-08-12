@@ -64,7 +64,7 @@ The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry
 
 SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
 
-![Raspberry Pi Zero with RFM95 module](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/20170809_092731.jpg)
+![Raspberry Pi Zero with RFM95 module](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/pizero-loRaWAN-bme280.jpg)
 
 I wired up a standalone HopeFRM RFM95 using an [Adafruit Perma Proto Bonnet Mini Kit](https://www.adafruit.com/product/3203). I used different pinouts from the Dragino HAT to suit the  physical layout of Proto Bonnet. You'll need to modify the default WiringPi and BCM pin definition in the **hal.c** file you'll find in the **lora_gps_hat** directory.
 
@@ -97,11 +97,14 @@ const int BCM_PIN_DIO[3] = { 19, 20, 21 };
 
 
 
+# Capacitors
 
+- 1 x 4.7uF ([Tantalum Capacitor](https://www.jaycar.com.au/4-7uf-16vdc-tantalum-capacitor/p/RZ6636))
+- 1 x 100nF ([Ceramic Capacitor](https://www.jaycar.com.au/100nf-50vdc-ceramic-capacitors-pack-of-2/p/RC5360))
 
+Wired as per this schematic.
 
-
-
+![](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Capacitors.png)
 
 
 
