@@ -147,6 +147,10 @@ manually enable them using raspi-config.
 Follow the instructions given here: 
 https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md
 
+### Enable I2C interface
+If you are using the BME280 Sensor then you also need to enable the I2C interface.
+
+
 ## Note on LMIC 1.6 license
 Text copied from https://www.research.ibm.com/labs/zurich/ics/lrsc/lmic.html
 
