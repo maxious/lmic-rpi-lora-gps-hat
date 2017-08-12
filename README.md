@@ -106,7 +106,7 @@ const int BCM_PIN_DIO[3] = { 19, 20, 21 };
 
 Wired as per this schematic.
 
-![](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Capacitors.png)
+![Schematic for capacitors](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Capacitors.png)
 
 
 ## Wire Antenna
@@ -125,7 +125,11 @@ Cut a stranded or solid core wire the the proper length for the module/frequency
 
 Strip a mm or two off the end of the wire, tin and solder into the ANT pad.
 
+# Integrating The Things Network and Azure IoT hub
 
+See [The Things Network Azure IoT Hub Gateway ](https://github.com/gloveboxes/The-Things-Network-Azure-IoT-Hub-Gateway) project.
+
+![Azure IoT Hub Integration](https://raw.githubusercontent.com/gloveboxes/lmic-rpi-lora-gps-hat/master/resources/Azure IoT Hub Integration.jpg)
 
 
 ## Installation
