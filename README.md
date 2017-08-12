@@ -60,7 +60,7 @@ enum { US915_FREQ_MIN = 902000000,
 
 ## Standalone RFM95W Lora Transceiver
 
-The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. You can pick up a RFM95W from [Alixpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20170808191918&SearchText=rfm95w) for US$5, they are cheap but fiddly to solder as pins do not match standard breadboard spacings. Note, the W at the end of RFM95W donates Worldwide and is the module version that should be used outside of China.
+The code base has been tested with the HopeRF RFM95W transceiver and a Raspberry Pi Zero. You can pick up a RFM95W from [Alixpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20170808191918&SearchText=rfm95w) for US$5, they are cheap but fiddly to solder as pins do not match standard breadboard spacings. Note, the W at the end of RFM95W denotes Worldwide and is the module version that should be used outside of China.
 
 SX1272, SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x modules) should work.
 
